@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  /*function getRandomInt(min, max) {
+  function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
@@ -12,8 +12,8 @@ $(document).ready(function() {
       "top": positionY,
       "left": positionX
     });
-  }*/
-
+  }
+  
   var mas = [];
   for (var i = 0; i < 3; i++) {
     for (var j = 0; j < 3; j++) {
@@ -22,7 +22,8 @@ $(document).ready(function() {
     }
   }
 
-  /*for (var i = 0; i < 9; i++) {
+  for (var i = 0; i < 9; i++) {
     setPosition(mas[i]);
-  }*/
+  }
+
 });
