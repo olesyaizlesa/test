@@ -76,7 +76,7 @@ body {
 .game {
   display: inline-block;
   width: 477px;
-  height: 450px;
+  height: 460px;
 }
 
 .image {
@@ -91,37 +91,37 @@ body {
 }
 
 #t0_0 {
-	background: url(img/0_0.png);
+	background: url("img/0_0.png"); 
 }
 
 #t0_1 {
-	background: url(img/0_1.png);
+	background: url("img/0_1.png"); 
 }
 
 #t0_2 {
-	background: url(img/0_2.png);
+	background: url("img/0_2.png");
 }
 
 #t1_0 {
-	background: url(img/1_0.png);
+	background: url("img/1_0.png");
 }
 
 #t1_1 {
-	background: url(img/1_1.png);
+	background: url("img/1_1.png");
 }
 
 #t1_2 {
-	background: url(img/1_2.png);
+	background: url("img/1_2.png");
 }
 
 #t2_0 {
-	background: url(img/2_0.png);
+	background: url("img/2_0.png");
 }
 
 #t2_1 {
-	background: url(img/2_1.png);
+	background: url("img/2_1.png");
 }
 
 #t2_2 {
-	background: url(img/2_2.png);
+	background: url("img/2_2.png");
 }
