@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function() {  
 
   var mas = [];
   for (var i = 0; i < 3; i++) {
