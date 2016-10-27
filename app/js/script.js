@@ -1,15 +1,20 @@
 $(document).ready(function() {
 
-	$(".image").draggable({ containment:".action",
-							snap:true,
-							snapMode: "outer"
-	});
+		$(".test").droppable();
 	
-	var snapMode = $(".image").draggable( "option", "snapMode" );
-	$(".image").draggable( "option", "snapMode", 'outer' );
-
-	$(".test").droppable();
-
-	 
+		$(".image").draggable({ containment:".action", 
+								snap: ".test-inner",
+								snapMode: "inner",
+								revert: "invalid",
+		start: function(){
+	    console.log("START");
+        },
+        drag: function(event, ui){
+	    console.log("DRAG");
+        },
+        stop: function(){
+	    console.log("STOP");
+        }
+		});
 	
 });

@@ -68,9 +68,17 @@ body {
   background-color: rgb(255, 255, 240);
   margin: 0 auto;
   position: relative;
-  width: 360px;
-  height: 360px;
+  width: 380px;
+  height: 380px;
   bottom: 40px;
+}
+
+.test-inner {
+  width: 120px;
+  height: 120px;
+  display: inline-block;
+  border: 1px dotted rgba(139, 195, 74, 0.3);
+  border-radius: 5px;
 }
 
 .game {
@@ -87,7 +95,6 @@ body {
 
 .game .image {
   display: inline-block;
-  /* position: static;*/
 }
 
 #t0_0 {
