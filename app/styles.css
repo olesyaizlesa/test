@@ -68,16 +68,17 @@ body {
   background-color: rgb(255, 255, 240);
   margin: 0 auto;
   position: relative;
-  width: 380px;
-  height: 380px;
+  width: 370px;
+  height: 370px;
   bottom: 40px;
 }
 
 .test-inner {
-  width: 120px;
-  height: 120px;
+  width: 118px;
+  height: 118px;
   display: inline-block;
-  border: 1px dotted rgba(139, 195, 74, 0.3);
+  border: 1px dotted rgba(139, 195, 74, 1);
+  margin: 0px;
   border-radius: 5px;
 }
 
@@ -98,11 +99,11 @@ body {
 }
 
 #t0_0 {
-	background: url("img/0_0.png"); 
+	background: url("img/0_0.png");
 }
 
 #t0_1 {
-	background: url("img/0_1.png"); 
+	background: url("img/0_1.png");
 }
 
 #t0_2 {
