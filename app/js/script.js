@@ -1,15 +1,15 @@
-	$(document).ready(function() {
+$(document).ready(function() {
 
-		$(".test-inner").droppable( { tolerance: "fit",
-		out: function() { $(this).droppable("enable"); },
-		drop: function() { $(this).droppable("disable"); }
+	$(".test-inner").droppable( { tolerance: "fit"
+/*	out: function() { $(this).droppable("enable"); },
+	drop: function() { $(this).droppable("enable"); }*/
 	});
 
-		$(".image").draggable( { containment:".action",	snap: ".test-inner",
-		snapMode: "inner", revert: "invalid",
-	  stack: ".image",
-		start: function() { console.log("start"); },
-		drag: function(event, ui) { console.log("drag"); },
-		stop: function(event, ui) { console.log("ui.position");	}
-		});
-	});
+	$(".image").draggable( { containment:".action",	snap: ".test-inner",
+	snapMode: "inner", stack: ".image", //revert: "invalid",
+	start: function() { console.log("start"); },
+	drag: function(event, ui) { console.log("drag"); },
+	stop: function(event, ui) { console.log("stop"); },
+});
+
+});
