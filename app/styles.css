@@ -37,22 +37,22 @@ body {
   top: 10px;
 }
 
-.scene .button {
+.button {
+    width: 260px;
+    height: 40px;
     display: inline-block;
     position: relative;
     font-size: 24px;
     color: #464242;
+    border: 6px solid #8BC34A;
+    border-radius: 12px;
+    background-color: rgb(255, 255, 240);
+    bottom: 5px;
 }
 
-#butt {
-  border: 6px solid #8BC34A;
-  border-radius: 12px;
-  background-color: rgb(255, 255, 240);
-  margin: 0 auto;
-  position: relative;
-  width: 330px;
-  height: 40px;
-  bottom: 5px;
+.disabled {
+  border: 6px solid rgb(255, 0, 0);;
+  background-color: rgb(255, 0, 0);
 }
 
 .action {
@@ -89,9 +89,9 @@ body {
 }
 
 .image {
+  position: absolute !important;
   width: 120px;
   height: 120px;
-  position: absolute;
 }
 
 .game .image {
