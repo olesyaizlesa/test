@@ -1,5 +1,15 @@
 $(document).ready(function() {
 
+/*
+здесь будет функция, которая активирует кнопку
+	function (image) {
+		for (i = 0; i < 3; i++) {
+			for (j = 0; j < 3; j++) {
+
+			}
+		}
+	}*/
+
 	var img;
 
 	var mas = [];
@@ -29,7 +39,6 @@ $(document).ready(function() {
 			currentPositionY: ui.position.top	} );
 
 		var new_pos;
-
 
 		for (var i = 0; i < 9; i++) {
 			if (i != img.index()) {
