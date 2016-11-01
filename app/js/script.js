@@ -1,15 +1,5 @@
 $(document).ready(function() {
 
-/*
-здесь будет функция, которая активирует кнопку
-	function (image) {
-		for (i = 0; i < 3; i++) {
-			for (j = 0; j < 3; j++) {
-
-			}
-		}
-	}*/
-
 	var img;
 
 	var mas = [];
@@ -31,15 +21,13 @@ $(document).ready(function() {
 	start: function() { console.log("start"); },
 	drag: function(event, ui) { console.log("drag"); },
 	stop: function(event, ui) {
-
-		img = $(this);
+			img = $(this);
 
 		img.data( {
 			currentPositionX: ui.position.left,
 			currentPositionY: ui.position.top	} );
 
 		var new_pos;
-
 		for (var i = 0; i < 9; i++) {
 			if (i != img.index()) {
 				if ((mas[i].data("currentPositionX") == img.data("currentPositionX")) &&
@@ -52,4 +40,5 @@ $(document).ready(function() {
 			}
 		},
 	});
+
 });
