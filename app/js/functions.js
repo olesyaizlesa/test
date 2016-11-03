@@ -20,11 +20,25 @@ function setPosition(img) {
 }
 
 function checkCells() {
-  $(".test-inner").each(function() {
-      if (($(this).data("currentPositionX") == null) &&
-      ($(this).data("currentPositionY") == null)) {
-        $(".button").removeClass("enabled");
-      }
-    $(".button").addClass("enabled");
+  var check = true;
+
+  $(".image").each(function() {
+    if (($(this).data("currentPositionX") == $(this).data("startPositionX")) &&
+    ($(this).data("currentPositionY") == $(this).data("startPositionY"))) {
+      check = false;
+     }
   });
+
+  if (check) {
+    $(".button").addClass("enabled");
+    $(".button").removeClass("disabled");
+  } else {
+    $(".button").removeClass("enabled");
+    $(".button").addClass("disabled");
+  }
+}
+
+
+function resetPos() {
+  
 }

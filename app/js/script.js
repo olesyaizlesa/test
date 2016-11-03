@@ -21,24 +21,43 @@ $(document).ready(function() {
 	start: function() { console.log("start"); },
 	drag: function(event, ui) { console.log("drag"); },
 	stop: function(event, ui) {
+
 			img = $(this);
 
-		img.data( {
-			currentPositionX: ui.position.left,
-			currentPositionY: ui.position.top	} );
+			img.data( {
+				currentPositionX: ui.position.left,
+				currentPositionY: ui.position.top	} );
 
-		var new_pos;
-		for (var i = 0; i < 9; i++) {
-			if (i != img.index()) {
-				if ((mas[i].data("currentPositionX") == img.data("currentPositionX")) &&
-						(mas[i].data("currentPositionY") == img.data("currentPositionY"))) {
-							$(this).animate( { left: img.data("startPositionX"),
-							top: img.data("startPositionY")}, 500, function() {
-						});
+			var new_pos;
+			for (var i = 0; i < 9; i++) {
+				if (i != img.index()) {
+					if ((mas[i].data("currentPositionX") == img.data("currentPositionX")) &&
+							(mas[i].data("currentPositionY") == img.data("currentPositionY"))) {
+
+								img.data({
+									currentPositionX: img.data("startPositionX"),
+									currentPositionY: img.data("startPositionY")
+								});
+
+								$(this).animate( { left: img.data("startPositionX"),
+								top: img.data("startPositionY")}, 500, function() {
+								});
+						}
 					}
+					checkCells();
 				}
+			},
+		});
+
+
+
+	/*	$(".button.enabled").on("click", function () {
+			if (i != img.index()) {
+				$(".image").animate( { left: img.data("startPositionX"),
+				top: img.data("startPositionY")}, 500, function() {
+				});
 			}
-		},
-	});
+		})*/
+
 
 });
