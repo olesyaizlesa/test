@@ -1,63 +1,57 @@
 $(document).ready(function() {
 
-	var img;
-
-	var mas = [];
+	var masImg = [[],[],[]];
 	for (var i = 0; i < 3; i++) {
 		for (var j = 0; j < 3; j++) {
 			var id = "#t" + i + "_" + j;
-			mas.push($(id));
-			}
+			masImg[i, j] = $(id);
+			setPosition(masImg[i, j]);
 		}
+	}
 
-  for (var i = 0; i < 9; i++) {
-		setPosition(mas[i]);
+	var masCells = [[],[],[]];
+	for (var i = 0; i < 3; i++) {
+		for (var j = 0; j < 3; j++) {
+			var id = "#ti" + i + "_" + j;
+			masCells[i, j] = $(id);
+		}
 	}
 
 	$(".test-inner").droppable({ tolerance: "fit"});
+	$(".game").droppable({});
 
 	$(".image").draggable( { containment:".action",	snap: ".test-inner",
 	snapMode: "inner", stack: ".image", revert: "invalid",
-	start: function() { console.log("start"); },
+	start: function(event, ui) { console.log("start"); },
 	drag: function(event, ui) { console.log("drag"); },
 	stop: function(event, ui) {
 
-			img = $(this);
+		img = $(this);
 
-			img.data( {
-				currentPositionX: ui.position.left,
-				currentPositionY: ui.position.top	} );
+		img.data({
+			currentPositionX: ui.position.left,
+			currentPositionY: ui.position.top });
 
-			var new_pos;
-			for (var i = 0; i < 9; i++) {
-				if (i != img.index()) {
-					if ((mas[i].data("currentPositionX") == img.data("currentPositionX")) &&
-							(mas[i].data("currentPositionY") == img.data("currentPositionY"))) {
+			for (var i = 0; i < 3; i++) {
+				for (var j = 0; j < 3; j++) {
+					if ((i != img.index("i")) || (j != img.index("j"))) {
+						if ((masImg[i].data("startPositionX") == img.data("startPositionX")) &&
+								(masImg[j].data("startPositionY") == img.data("startPositionY"))) {
 
-								img.data({
-									currentPositionX: img.data("startPositionX"),
-									currentPositionY: img.data("startPositionY")
-								});
+									img.data({
+										currentPositionX: img.data("startPositionX"),
+										currentPositionY: img.data("startPositionY")
+									});
 
-								$(this).animate( { left: img.data("startPositionX"),
-								top: img.data("startPositionY")}, 500, function() {
-								});
+									$(this).animate( { left: img.data("startPositionX"),
+									top: img.data("startPositionY")}, 500, function() {
+									});
+							}
 						}
 					}
-					checkCells();
 				}
-			},
-		});
-
-
-
-	/*	$(".button.enabled").on("click", function () {
-			if (i != img.index()) {
-				$(".image").animate( { left: img.data("startPositionX"),
-				top: img.data("startPositionY")}, 500, function() {
-				});
-			}
-		})*/
-
+		checkCells();
+	},
+});
 
 });
