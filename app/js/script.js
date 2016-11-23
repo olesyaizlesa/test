@@ -1,19 +1,25 @@
 $(document).ready(function() {
 
-	var masImg = [[],[],[]];
+	var masImg = [];
 	for (var i = 0; i < 3; i++) {
+		masImg[i] = [];
 		for (var j = 0; j < 3; j++) {
 			var id = "#t" + i + "_" + j;
-			masImg[i, j] = $(id);
-			setPosition(masImg[i, j]);
+			masImg[i][j] = ($(id));
+		}
+	}
+	for (var i = 0; i < 3; i++) {
+		for (var j = 0; j < 3; j++) {
+			setPosition(masImg[i][j]);
 		}
 	}
 
-	var masCells = [[],[],[]];
+	var masCells = [];
 	for (var i = 0; i < 3; i++) {
+		masCells[i] = [];
 		for (var j = 0; j < 3; j++) {
 			var id = "#ti" + i + "_" + j;
-			masCells[i, j] = $(id);
+			masCells[i][j] = ($(id));
 		}
 	}
 
@@ -32,26 +38,37 @@ $(document).ready(function() {
 			currentPositionX: ui.position.left,
 			currentPositionY: ui.position.top });
 
-			for (var i = 0; i < 3; i++) {
-				for (var j = 0; j < 3; j++) {
-					if ((i != img.index("i")) || (j != img.index("j"))) {
-						if ((masImg[i].data("startPositionX") == img.data("startPositionX")) &&
-								(masImg[j].data("startPositionY") == img.data("startPositionY"))) {
+			$(".button").on("click", function () {
+				console.log("click");
+				for (var i = 0; i < 3; i++) {
+					for (var j = 0; j < 3; j++) {
+						if ((i != img.index("i")) || (j != img.index("j"))) {
 
-									img.data({
-										currentPositionX: img.data("startPositionX"),
-										currentPositionY: img.data("startPositionY")
-									});
+					/*		if  (($(this).data("currentPositionX") == img.data("startPositionX")) &&
+									($(this).data("currentPositionY") == img.data("startPositionY"))) {
 
-									$(this).animate( { left: img.data("startPositionX"),
-									top: img.data("startPositionY")}, 500, function() {
-									});
+										img.data({
+											currentPositionX: img.data("startPositionX"),
+											currentPositionY: img.data("startPositionY")
+										});*/
+
+										$(".image").animate( { left: img.data("startPositionX"),
+										top: img.data("startPositionY")}, 500, function() {
+										});
+
+										img.data({
+											currentPositionX: img.data("startPositionX"),
+											currentPositionY: img.data("startPositionY")
+										});
+
+
+								//	}
+								}
 							}
 						}
-					}
-				}
-		checkCells();
-	},
-});
+					});
+			checkCells();
+		},
+	});
 
 });
