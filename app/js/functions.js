@@ -13,17 +13,28 @@ function setPosition(img) {
 
   img.data({
     startPositionX: positionX,
-    startPositionY: positionY,
-    currentPositionX: positionX,
-    currentPositionY: positionY
+    startPositionY: positionY
   });
+}
+
+function collision(elem, masCells, area) {
+  for (var i = 0; i < 3; i++) {
+    for (var j = 0; j < 3; j++) {
+      if ((Math.abs(elem.position().left - masCells[i][j].position().left) <= area) &&
+      (Math.abs(elem.position().top - masCells[i][j].position().top) <= area) &&
+      (elem.attr("id") != masCells[i][j].attr("id"))) {
+        return masCells[i][j]
+      }
+    }
+  }
+  return false
 }
 
 function checkCells() {
   var check = true;
   $(".image").each(function() {
-    if (($(this).data("currentPositionX") == $(this).data("startPositionX")) &&
-    ($(this).data("currentPositionY") == $(this).data("startPositionY"))) {
+    if (($(this).data("currentPositionX") == null) &&
+    ($(this).data("currentPositionX") == null)) {
       check = false;
     }
     if (check) {
